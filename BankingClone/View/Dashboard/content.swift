@@ -22,7 +22,9 @@ extension DashboardView {
                     .foregroundStyle(.red)
                 
                 Button("Retry") {
-                    viewModel.loadData()
+                    Task {
+                        await viewModel.loadData()
+                    }
                 }
             }
             .frame(maxHeight: .infinity)

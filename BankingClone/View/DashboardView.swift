@@ -9,6 +9,9 @@ struct DashboardView: View {
             content
                 .padding()
                 .navigationTitle("My Account")
+                .task {
+                    await viewModel.loadData()
+                }
         }
     }
     

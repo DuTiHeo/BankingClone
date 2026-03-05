@@ -7,9 +7,6 @@
 
 import Foundation
 
-struct TransactionService: TransactionServiceProtocol {
-    func fetchTransactions() async -> [Transaction] {
-        try? await Task.sleep(nanoseconds: 300_000_000)
-        return MockData.transactions
-    }
+protocol TransactionServiceProtocol {
+    func fetchTransactions() async throws -> [Transaction]
 }

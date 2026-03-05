@@ -6,17 +6,20 @@
 //
 
 import Foundation
+
 @Observable
+@MainActor
 final class DashboardViewModel {
     
     var account: Account?
     var transactions: [Transaction] = []
+    private let service: TransactionServiceProtocol
     var state: ViewState = .loading
     var selectedFilter: TransactionFilter = .all
     var searchText: String = ""
     
-    init() {
-        loadData()
+    init(service: TransactionServiceProtocol = MockTransactionService()) {
+            self.service = service
     }
     var groupedTransactions: [(date: Date, items: [Transaction])] {
         
@@ -58,21 +61,17 @@ final class DashboardViewModel {
             }
         }
     }
-    func loadData() {
-            state = .loading
-            
-            // Giả lập delay như gọi API
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                
-                // Giả lập success
-                self.account = MockData.account
-                self.transactions = MockData.transactions
-                self.state = .success
-                
-                // Nếu muốn test error:
-                // self.state = .error("Failed to load data")
-            }
+    func loadData() async {
+        state = .loading
+
+        do {
+            account = MockData.account
+            transactions = try await service.fetchTransactions()
+            state = .success
+        } catch {
+            state = .error("Failed to load transactions. Please try again.")
         }
+    }
     var recentTransactions: [Transaction] {
         transactions.prefix(3).map { $0 }
     }
