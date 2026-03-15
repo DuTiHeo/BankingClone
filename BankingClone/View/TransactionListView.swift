@@ -19,7 +19,11 @@ struct TransactionListView: View {
                     header: Text(group.date.formatted(date: .abbreviated, time: .omitted))
                 ) {
                     ForEach(group.items) { transaction in
-                        TransactionRowView(transaction: transaction)
+                        NavigationLink {
+                            TransactionDetailView(transaction: transaction)
+                        } label: {
+                            TransactionRowView(transaction: transaction)
+                        }
                     }
                 }
             }
@@ -36,6 +40,9 @@ struct TransactionListView: View {
                 }
                 .pickerStyle(.segmented)
             }
+        }
+        .refreshable {
+            await viewModel.loadData()
         }
         
     }

@@ -16,7 +16,12 @@ extension DashboardView {
                 .font(.headline)
             
             ForEach(viewModel.recentTransactions) { transaction in
-                TransactionRowView(transaction: transaction)
+                NavigationLink {
+                    TransactionDetailView(transaction: transaction)
+                } label: {
+                    TransactionRowView(transaction: transaction)
+                        .foregroundStyle(.black)
+                }
             }
         }
     }

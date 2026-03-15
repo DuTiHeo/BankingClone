@@ -17,8 +17,9 @@ final class DashboardViewModel {
     var state: ViewState = .loading
     var selectedFilter: TransactionFilter = .all
     var searchText: String = ""
-    
-    init(service: TransactionServiceProtocol = MockTransactionService()) {
+    var isLoading = false
+
+    init(service: TransactionServiceProtocol = MockTransactionService(behavior: .success)) {
             self.service = service
     }
     var groupedTransactions: [(date: Date, items: [Transaction])] {
@@ -62,6 +63,10 @@ final class DashboardViewModel {
         }
     }
     func loadData() async {
+        if isLoading { return }
+        
+        isLoading = true
+        defer { isLoading = false } //defer luon lam cho cau lenh nbay chay du ham co ket thuc bang cach nao (ke ca throw ra errol
         state = .loading
 
         do {
@@ -69,7 +74,8 @@ final class DashboardViewModel {
             transactions = try await service.fetchTransactions()
             state = .success
         } catch {
-            state = .error("Failed to load transactions. Please try again.")
+            let message = (error as? LocalizedError)?.errorDescription ?? error.localizedDescription
+            state = .error(message)
         }
     }
     var recentTransactions: [Transaction] {
