@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "amount": 2000000,
+    "type": "income",
+    "date": "2026-03-16T08:30:00Z",
+    "description": "Salary"
+  },
+  {
+    "id": 2,
+    "amount": 150000,
+    "type": "expense",
+    "date": "2026-03-15T09:10:00Z",
+    "description": "Coffee"
+  }
+]
