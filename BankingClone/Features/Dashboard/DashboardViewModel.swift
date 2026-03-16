@@ -18,8 +18,9 @@ final class DashboardViewModel {
     var selectedFilter: TransactionFilter = .all
     var searchText: String = ""
     var isLoading = false
+    private let cache = TransactionCache()
 
-    init(service: TransactionServiceProtocol = MockTransactionService(behavior: .success)) {
+    init(service: TransactionServiceProtocol) {
             self.service = service
     }
     var groupedTransactions: [(date: Date, items: [Transaction])] {
@@ -34,12 +35,12 @@ final class DashboardViewModel {
     }
     var filteredTransactions: [Transaction] {
         
-        // 1️⃣ Sort
+        // Sort
         let sorted = transactions.sorted {
             $0.date > $1.date
         }
         
-        // 2️⃣ Filter theo loại
+        // Filter theo loại
         let filteredByType: [Transaction]
         
         switch selectedFilter {
@@ -53,7 +54,7 @@ final class DashboardViewModel {
             filteredByType = sorted.filter { $0.type == .expense }
         }
         
-        // 3️⃣ Search
+        // Search
         if searchText.isEmpty {
             return filteredByType
         } else {
@@ -64,21 +65,53 @@ final class DashboardViewModel {
     }
     func loadData() async {
         if isLoading { return }
-        
         isLoading = true
-        defer { isLoading = false } //defer luon lam cho cau lenh nbay chay du ham co ket thuc bang cach nao (ke ca throw ra errol
-        state = .loading
+        defer { isLoading = false }
+
+        if transactions.isEmpty, let cached = try? cache.load() {
+            transactions = cached
+            state = .success
+        } else {
+            state = .loading
+        }
 
         do {
             account = MockData.account
             transactions = try await service.fetchTransactions()
+            try? cache.save(transactions)
             state = .success
         } catch {
             let message = (error as? LocalizedError)?.errorDescription ?? error.localizedDescription
             state = .error(message)
         }
     }
+
     var recentTransactions: [Transaction] {
         transactions.prefix(3).map { $0 }
     }
+    
+    var totalIncome: Double {
+        transactions
+            .filter { $0.type == .income }
+            .reduce(0) { $0 + $1.amount }
+    }
+
+    var totalExpense: Double {
+        transactions
+            .filter { $0.type == .expense }
+            .reduce(0) { $0 + $1.amount }
+    }
+
+    var netFlow: Double {
+        totalIncome - totalExpense
+    }
+
+    var displayBalance: Double {
+        account?.balance ?? 0
+    }
+
+    var displayOwnerName: String {
+        account?.ownerName ?? "Unknown"
+    }
+
 }

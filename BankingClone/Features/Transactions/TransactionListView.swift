@@ -49,5 +49,6 @@ struct TransactionListView: View {
 }
 
 #Preview {
-    TransactionListView(viewModel: DashboardViewModel())
+    //    TransactionListView(viewModel: DashboardViewModel())
+
 }

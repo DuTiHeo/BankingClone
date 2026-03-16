@@ -39,6 +39,19 @@ extension DashboardView {
             accountSection
             actionButtons
             transactionSection
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Total income")
+                    Text(viewModel.totalIncome, format: .currency(code: "VND"))
+                        .foregroundStyle(.green)
+                }
+                Spacer()
+                VStack(alignment: .leading) {
+                    Text("Total expense")
+                    Text(viewModel.totalExpense, format: .currency(code: "VND"))
+                        .foregroundStyle(.red)
+                }
+            }
             Spacer()
         }
     }

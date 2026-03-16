@@ -11,20 +11,17 @@ extension DashboardView {
     
     var accountSection: some View {
         VStack(spacing: 8) {
-            Text(viewModel.account?.ownerName ?? "K co tt")
+            Text(viewModel.displayOwnerName)
                 .font(.title2)
                 .bold()
             
-            Text(
-                viewModel.account?.balance ?? 0.0,
-                format: .currency(code: "VND")
-            )
-            .font(.largeTitle)
-            .bold()
+            Text(viewModel.displayBalance, format: .currency(code: "VND"))
+                .font(.largeTitle)
+                .bold()
         }
         .frame(maxWidth: .infinity)
         .padding()
-        .background(Color.blue.opacity(0.1))
+        .background(Color.gray.opacity(0.1))
         .cornerRadius(12)
     }
 }

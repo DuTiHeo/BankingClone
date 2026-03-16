@@ -21,7 +21,7 @@ extension DashboardView {
             
             
             Button("Transfer Money") {
-                // navigation sau
+                print("Bấm con cặc")
             }
             .buttonStyle(.bordered)
         }
