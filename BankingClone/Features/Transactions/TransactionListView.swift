@@ -44,6 +44,8 @@ struct TransactionListView: View {
         .refreshable {
             await viewModel.loadData()
         }
+
+        
         
     }
 }

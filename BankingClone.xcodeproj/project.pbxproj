@@ -6,11 +6,32 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6D72FE372F6917D700571D14 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6D72FE362F6917CE00571D14 /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6D56FC782F67EDB100240B1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D9F24BE2F57448100091146 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D9F24C52F57448100091146;
+			remoteInfo = BankingClone;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		6D56FC742F67EDB100240B1C /* BankingCloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankingCloneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D72FE362F6917CE00571D14 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6D9F24C62F57448100091146 /* BankingClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankingClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		6D56FC752F67EDB100240B1C /* BankingCloneTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BankingCloneTests;
+			sourceTree = "<group>";
+		};
 		6D9F24C82F57448100091146 /* BankingClone */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = BankingClone;
@@ -19,6 +40,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6D56FC712F67EDB100240B1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6D9F24C32F57448100091146 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -32,7 +60,9 @@
 		6D9F24BD2F57448100091146 = {
 			isa = PBXGroup;
 			children = (
+				6D72FE362F6917CE00571D14 /* README.md */,
 				6D9F24C82F57448100091146 /* BankingClone */,
+				6D56FC752F67EDB100240B1C /* BankingCloneTests */,
 				6D9F24C72F57448100091146 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				6D9F24C62F57448100091146 /* BankingClone.app */,
+				6D56FC742F67EDB100240B1C /* BankingCloneTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +79,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6D56FC732F67EDB100240B1C /* BankingCloneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D56FC7A2F67EDB100240B1C /* Build configuration list for PBXNativeTarget "BankingCloneTests" */;
+			buildPhases = (
+				6D56FC702F67EDB100240B1C /* Sources */,
+				6D56FC712F67EDB100240B1C /* Frameworks */,
+				6D56FC722F67EDB100240B1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D56FC792F67EDB100240B1C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6D56FC752F67EDB100240B1C /* BankingCloneTests */,
+			);
+			name = BankingCloneTests;
+			packageProductDependencies = (
+			);
+			productName = BankingCloneTests;
+			productReference = 6D56FC742F67EDB100240B1C /* BankingCloneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6D9F24C52F57448100091146 /* BankingClone */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D9F24D12F57448300091146 /* Build configuration list for PBXNativeTarget "BankingClone" */;
@@ -80,6 +134,10 @@
 				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
+					6D56FC732F67EDB100240B1C = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = 6D9F24C52F57448100091146;
+					};
 					6D9F24C52F57448100091146 = {
 						CreatedOnToolsVersion = 26.0;
 					};
@@ -100,21 +158,37 @@
 			projectRoot = "";
 			targets = (
 				6D9F24C52F57448100091146 /* BankingClone */,
+				6D56FC732F67EDB100240B1C /* BankingCloneTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6D9F24C42F57448100091146 /* Resources */ = {
+		6D56FC722F67EDB100240B1C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6D9F24C42F57448100091146 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D72FE372F6917D700571D14 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6D56FC702F67EDB100240B1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6D9F24C22F57448100091146 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +198,55 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6D56FC792F67EDB100240B1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D9F24C52F57448100091146 /* BankingClone */;
+			targetProxy = 6D56FC782F67EDB100240B1C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		6D56FC7B2F67EDB100240B1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = name.dutiheo.BankingCloneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BankingClone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BankingClone";
+			};
+			name = Debug;
+		};
+		6D56FC7C2F67EDB100240B1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = name.dutiheo.BankingCloneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BankingClone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BankingClone";
+			};
+			name = Release;
+		};
 		6D9F24CF2F57448300091146 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -313,6 +435,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6D56FC7A2F67EDB100240B1C /* Build configuration list for PBXNativeTarget "BankingCloneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D56FC7B2F67EDB100240B1C /* Debug */,
+				6D56FC7C2F67EDB100240B1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6D9F24C12F57448100091146 /* Build configuration list for PBXProject "BankingClone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

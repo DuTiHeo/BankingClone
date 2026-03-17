@@ -13,21 +13,30 @@ extension DashboardView {
         switch viewModel.state {
             
         case .loading:
-            ProgressView()
-                .frame(maxHeight: .infinity)
-            
-        case .error(let message):
-            VStack(spacing: 12) {
-                Text(message)
-                    .foregroundStyle(.red)
-                
-                Button("Retry") {
-                    Task {
-                        await viewModel.loadData()
+            VStack(spacing: 16) {
+                RoundedRectangle(cornerRadius: 12)
+                    .frame(height: 120) // account card skeleton
+
+                HStack(spacing: 12) {
+                    RoundedRectangle(cornerRadius: 8).frame(height: 36)
+                    RoundedRectangle(cornerRadius: 8).frame(height: 36)
+                }
+
+                VStack(spacing: 12) {
+                    ForEach(0..<3) { _ in
+                        SkeletonRowView()
                     }
                 }
             }
+            .redacted(reason: .placeholder)
             .frame(maxHeight: .infinity)
+            
+        case .error(let message):
+            ErrorStateView(message: message) {
+                Task { await viewModel.loadData() }
+            }
+            .frame(maxHeight: .infinity)
+
             
         case .success:
             dashboardContent

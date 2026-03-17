@@ -79,7 +79,7 @@ final class DashboardViewModel {
             account = MockData.account
             transactions = try await service.fetchTransactions()
             try? cache.save(transactions)
-            state = .success
+            state = .success //
         } catch {
             let message = (error as? LocalizedError)?.errorDescription ?? error.localizedDescription
             state = .error(message)
