@@ -24,6 +24,9 @@
 		6D56FC742F67EDB100240B1C /* BankingCloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankingCloneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D72FE362F6917CE00571D14 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6D9F24C62F57448100091146 /* BankingClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankingClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DA5BFFA2F93A8AA0013B6F9 /* scr1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scr1.png; sourceTree = "<group>"; };
+		6DA5BFFB2F93A8E90013B6F9 /* scr2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scr2.png; sourceTree = "<group>"; };
+		6DA5BFFC2F93A9040013B6F9 /* scr3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scr3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -60,6 +63,7 @@
 		6D9F24BD2F57448100091146 = {
 			isa = PBXGroup;
 			children = (
+				6DA5BFF92F93A85B0013B6F9 /* Sceenshot */,
 				6D72FE362F6917CE00571D14 /* README.md */,
 				6D9F24C82F57448100091146 /* BankingClone */,
 				6D56FC752F67EDB100240B1C /* BankingCloneTests */,
@@ -74,6 +78,16 @@
 				6D56FC742F67EDB100240B1C /* BankingCloneTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6DA5BFF92F93A85B0013B6F9 /* Sceenshot */ = {
+			isa = PBXGroup;
+			children = (
+				6DA5BFFC2F93A9040013B6F9 /* scr3.png */,
+				6DA5BFFB2F93A8E90013B6F9 /* scr2.png */,
+				6DA5BFFA2F93A8AA0013B6F9 /* scr1.png */,
+			);
+			path = Sceenshot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
