@@ -39,8 +39,9 @@ Mock / Local JSON
 - Enhanced empty/loading states
 
 ## Screenshots
-
-![Preview 1](./Sceenshot/scr1.png)
-![Preview 2](./Sceenshot/scr2.png)
-![Preview 3](./Sceenshot/scr3.png)
+<p align="center">
+  <img src="./Sceenshot/scr1.png" width="180"/>
+  <img src="./Sceenshot/scr2.png" width="180"/>
+  <img src="./Sceenshot/scr3.png" width="180"/>
+</p>
 
