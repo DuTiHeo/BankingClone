@@ -40,7 +40,7 @@ Mock / Local JSON
 
 ## Screenshots
 
-![Preview 1](./Screenshot/scr1.png)
-![Preview 2](./Screenshot/scr2.png)
-![Preview 3](./Screenshot/scr3.png)
+![Preview 1](./Sceenshot/scr1.png)
+![Preview 2](./Sceenshot/scr2.png)
+![Preview 3](./Sceenshot/scr3.png)
 
